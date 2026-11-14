@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Un morpion à deux joueurs ou contre l’ordinateur, avec trois difficultés.">
+  <title>Morpion Club</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="engine.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="club">
+    <header><span class="eyebrow">LE CLASSIQUE, À PARTAGER</span><h1>Morpion<span> Club.</span></h1><p>Trois cases alignées. Une belle revanche.</p></header>
+    <section class="game" aria-label="Jeu de morpion">
+      <aside class="settings">
+        <span class="eyebrow">01 / PRÉPARE LA PARTIE</span>
+        <h2>À toi de jouer.</h2>
+        <label for="mode">Ton adversaire</label>
+        <select id="mode"><option value="ai">L’ordinateur</option><option value="local">Un ami · sur cet appareil</option></select>
+        <div id="ai-settings">
+          <label for="difficulty">Difficulté</label>
+          <select id="difficulty"><option value="easy">Facile</option><option value="medium">Moyen</option><option value="unbeatable" selected>Imbattable</option></select>
+          <label for="symbol">Ton symbole</label>
+          <select id="symbol"><option value="X">X · je commence</option><option value="O">O · l’ordinateur commence</option></select>
+        </div>
+        <p class="hint" id="hint">Il joue chaque coup à la perfection. Arriveras-tu à faire match nul ?</p>
+        <button class="primary" id="restart">Nouvelle partie <span aria-hidden="true">↗</span></button>
+        <p class="small">Changer un réglage lance une nouvelle partie. X commence toujours.</p>
+      </aside>
+      <div class="arena">
+        <div class="arena-top"><span class="eyebrow">02 / LE DUEL</span><span class="badge" id="badge">VS ORDINATEUR</span></div>
+        <h2 id="status" role="status" aria-live="polite">À toi de jouer · X</h2>
+        <div class="board" id="board" role="group" aria-label="Grille de morpion"></div>
+        <p class="rule">Aligne 3 symboles pour gagner.</p>
+      </div>
+    </section>
+    <footer>Deux joueurs, un écran. Aucune installation.</footer>
+  </main>
+</body>
+</html>
